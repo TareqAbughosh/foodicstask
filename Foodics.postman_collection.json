@@ -1,0 +1,123 @@
+{
+	"info": {
+		"_postman_id": "0dac7b27-893c-4d57-b076-93135fbddfbe",
+		"name": "Foodics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "5387241"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}products",
+							"host": [
+								"{{base_url}}products"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Create an order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"products\": [\r\n        {\r\n            \"product_id\": 1,\r\n            \"quantity\": 20\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}order",
+							"host": [
+								"{{base_url}}order"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an order",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}orders/91",
+							"host": [
+								"{{base_url}}orders"
+							],
+							"path": [
+								"91"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ingredients",
+			"item": [
+				{
+					"name": "Update ingredient stock",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ingredients\": [\r\n        {\r\n            \"id\": 1,\r\n            \"stock\": 2000\r\n        },\r\n        {\r\n            \"id\": 2,\r\n            \"stock\": 2000\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}admin/ingredients",
+							"host": [
+								"{{base_url}}admin"
+							],
+							"path": [
+								"ingredients"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
